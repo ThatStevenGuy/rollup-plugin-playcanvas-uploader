@@ -1,6 +1,6 @@
 {
     "name": "rollup-plugin-playcanvas-uploader",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "A lightweight Rollup plugin to automatically upload your bundles to PlayCanvas.",
     "keywords": [
         "playcanvas",
