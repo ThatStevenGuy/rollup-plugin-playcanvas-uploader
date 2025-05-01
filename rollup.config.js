@@ -25,4 +25,5 @@ switch(process.env.target) {
         break;
 }
 
+config.external = ["axios", "form-data", "fs"];
 export default config;
