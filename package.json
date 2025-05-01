@@ -1,0 +1,55 @@
+{
+    "name": "rollup-plugin-playcanvas-uploader",
+    "version": "0.0.1",
+    "description": "A lightweight Rollup plugin to automatically upload your bundles to PlayCanvas.",
+    "keywords": [
+        "playcanvas",
+        "uploader",
+        "upload",
+        "rollup",
+        "rollupplugin",
+        "restapi",
+        "webgl",
+        "webgpu",
+        "gamedev",
+        "bundle"
+    ],
+    "author": "Steven Derks",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/ThatStevenGuy/rollup-plugin-playcanvas-uploader.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ThatStevenGuy/rollup-plugin-playcanvas-uploader/issues"
+    },
+    "homepage": "https://github.com/ThatStevenGuy/rollup-plugin-playcanvas-uploader",
+    "dependencies": {
+        "axios": "^1.9.0",
+        "form-data": "^4.0.2"
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^12.1.2",
+        "@types/node": "^22.15.3",
+        "rollup": "^4.40.1",
+        "rollup-plugin-dts": "^6.2.1",
+        "tslib": "^2.8.1",
+        "typescript": "^5.8.3"
+    },
+    "type": "module",
+    "main": "./dist/playcanvas-uploader.mjs",
+    "types": "./dist/playcanvas-uploader.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/playcanvas-uploader.mjs",
+            "require": "./dist/playcanvas-uploader.cjs",
+            "types": "./dist/playcanvas-uploader.d.ts"
+        }
+    },
+    "scripts": {
+        "build": "rollup -c",
+        "build:dts": "tsc src/index.ts --outDir types --allowJs --declaration --emitDeclarationOnly --esModuleInterop",
+        "build:types": "npm run build:dts && rollup -c --environment target:types",
+        "build:publish": "npm run build && npm run build:types"
+    }
+}

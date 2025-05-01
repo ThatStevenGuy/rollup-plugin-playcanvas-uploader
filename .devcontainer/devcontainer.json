@@ -1,0 +1,18 @@
+{
+	"name": "Node.js & TypeScript",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	"postCreateCommand": "npm install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"mhutchie.git-graph"
+			]
+		}
+	},
+
+	// We need to run as root to avoid UID & GID mapping issues when running Docker Desktop rootless. More info:
+	// https://github.com/microsoft/vscode-remote-release/issues/4646
+	"remoteUser": "root"
+}
